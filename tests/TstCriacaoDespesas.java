@@ -20,9 +20,9 @@ public class TstCriacaoDespesas {
 	@Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
-			{ 1, 2, 0, 10, -10},
-			{ 1, 1, 5, 3, 2},
-			{ 1, 3, 3, 3, 0}
+			{ 10, 2, 0, 10, -10},
+			{ 10, 1, 5, 3, 2},
+			{ 10, 3, 3, 3, 0}
 		});
 	}
 	

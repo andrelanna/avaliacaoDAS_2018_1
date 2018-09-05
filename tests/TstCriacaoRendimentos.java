@@ -20,9 +20,9 @@ public class TstCriacaoRendimentos {
 	@Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
-			{ 1, 2, 0, 10, 10},
-			{ 1, 1, 5, 5, 10},
-			{ 1, 3, -3, 6, 3}
+			{ 11, 2, 0, 10, 10},
+			{ 11, 1, 5, 5, 10},
+			{ 11, 3, -3, 6, 3}
 		});
 	}
 	

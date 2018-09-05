@@ -11,7 +11,7 @@ public class TstCriacaoDespesasValorEmBranco {
 	@Category(Excecao.class)
 	@Test(expected = ValorEmBrancoException.class)
 	public void test() throws ValorEmBrancoException {
-		ContaCorrente c = ContaCorrente.obterContaCorrente(1, 1, 5);
+		ContaCorrente c = ContaCorrente.obterContaCorrente(20, 20, 5);
 		c.criarDespesa(0);
 	}
 }
