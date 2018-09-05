@@ -13,7 +13,7 @@ public class TstCriacaoRendimentosValorEmBranco {
 	
 	public TstCriacaoRendimentosValorEmBranco() {
 		int agencia = 1;
-		int conta = 1;
+		int conta = 10;
 		int saldo = 0;
 		this.contaCorrente = ContaCorrente.obterContaCorrente(agencia, conta, saldo);
 	}
