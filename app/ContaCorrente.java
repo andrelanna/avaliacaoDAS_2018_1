@@ -7,9 +7,7 @@ import java.util.List;
 import exceptions.ContaJaCadastradaException;
 import exceptions.ValorEmBrancoException;
 
-
 public class ContaCorrente {
-
 	private static List<ContaCorrente> contasCadastradas = new LinkedList<ContaCorrente>();
 	private int agencia;
 	private int conta;
@@ -93,5 +91,4 @@ public class ContaCorrente {
 		saldo -= r.getValorTransacao();
 		return saldo;
 	}
-
 }

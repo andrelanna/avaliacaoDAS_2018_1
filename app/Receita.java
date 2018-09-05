@@ -1,7 +1,6 @@
 package app;
 
 public class Receita {
-
 	double valorTransacao; 
 	
 	public Receita(double valorTransacao) {
