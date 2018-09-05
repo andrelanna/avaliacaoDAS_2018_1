@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import app.ContaCorrente;
 import exceptions.ValorEmBrancoException;
 
-class TstCriacaoRendimentosValorEmBranco {
+public class TstCriacaoRendimentosValorEmBranco {
 	
 	private ContaCorrente contaCorrente;
 	
@@ -19,7 +19,7 @@ class TstCriacaoRendimentosValorEmBranco {
 	}
 
 	@Test(expected = ValorEmBrancoException.class)
-	void testCriacaoContas() {
+	public void testCriacaoContas() {
 		this.contaCorrente.criarReceita(0);
 	}
 
