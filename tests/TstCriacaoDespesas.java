@@ -1,55 +1,53 @@
 package tests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import app.ContaCorrente;
-import tests.categories.Criacao;
+import exceptions.ValorEmBrancoException;
 
 @RunWith(Parameterized.class)
-@Category(Criacao.class)
-public class TstCriacaoRendimentos {
+public class TstCriacaoDespesas {
 
 	private int agencia;
 	private int conta;
 	private double saldoAbertura;
-	private double valorTransacao;
+	private float valorTransacao;
 	private double saldo;
 	
 	
-	public TstCriacaoRendimentos(int agencia, 
-			int conta, double saldoAbertura, double valorTransacao, double saldo) {
+	public TstCriacaoDespesas(int agencia, int conta, double saldoAbertura, float valorTransaco, double saldo) {
 		this.agencia = agencia;
 		this.conta = conta;
 		this.saldoAbertura = saldoAbertura;
-		this.valorTransacao = valorTransacao;
+		this.valorTransacao = valorTransaco;
 		this.saldo = saldo;
 	}
 	
 	@Parameters
 	public static Collection<Object[]> data() {
 		return Arrays.asList(new Object[][] {
-			{1, 2, 0, 10, 10},
-			{1, 1, 5, 5, 10},
-			{1, 3, -3, 6, 3}
+			{1, 2, 0, 10, -10},
+			{1, 1, 5, 3, 2},
+			{1, 3, 3, 3, 0}
 		});
 	}
-	
+
+
 	@Test
-	public void testCriacaoRendimentos() {
+	public void testCriacaoDespesas() throws ValorEmBrancoException {
 		ContaCorrente c = ContaCorrente.obterContaCorrente(agencia, conta, saldoAbertura);
 		
-		double r = valorTransacao + saldoAbertura;
+		double r = saldoAbertura - valorTransacao;
 		
-		assertEquals(r, saldo, 0);
+		assertEquals(r, c.criarDespesa(valorTransacao), 0);
 	}
 
 }
