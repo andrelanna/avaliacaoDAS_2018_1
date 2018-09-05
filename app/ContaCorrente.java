@@ -1,12 +1,6 @@
-package app;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
-import exceptions.ContaJaCadastradaException;
-import exceptions.ValorEmBrancoException;
-
 
 public class ContaCorrente {
 
@@ -17,7 +11,7 @@ public class ContaCorrente {
 	private List<Receita> receitas = new LinkedList<Receita>();
 	private List<Despesa> despesas = new LinkedList<Despesa>();
 
-	private ContaCorrente(int agencia, int conta, double saldo) {
+	public ContaCorrente(int agencia, int conta, double saldo) {
 		this.agencia = agencia;
 		this.conta = conta;
 		this.saldo = saldo;
