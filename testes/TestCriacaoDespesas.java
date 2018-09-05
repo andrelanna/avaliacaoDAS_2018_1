@@ -13,7 +13,6 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 import app.ContaCorrente;
-import app.Criacao;
 import exceptions.ValorEmBrancoException;
 
 

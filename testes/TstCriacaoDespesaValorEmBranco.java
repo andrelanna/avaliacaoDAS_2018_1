@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import app.ContaCorrente;
-import app.Excecao;
 import exceptions.ValorEmBrancoException;
 
 @Category({Excecao.class})

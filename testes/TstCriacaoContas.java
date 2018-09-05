@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import app.ContaCorrente;
-import app.Criacao;
-import app.Excecao;
 import exceptions.ContaJaCadastradaException;
 
 public class TstCriacaoContas {
