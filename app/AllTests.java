@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({TstCriacaoRendimentos.class, TstCriacaoDespesas.class})
+@Suite.SuiteClasses({TstCriacaoRendimentos.class, TstCriacaoDespesas.class, TstCriacaoDespesaValorEmBranco.class, TstCriacaoRendimentosValorEmBranco.class})
 
 public class AllTests {
 
