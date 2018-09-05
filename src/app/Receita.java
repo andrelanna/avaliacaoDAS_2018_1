@@ -1,9 +1,10 @@
-package app;
+package src.app;
 
-public class Despesa {
-	double valorTransacao;
+public class Receita {
 
-	public Despesa(double valorTransacao) {
+	double valorTransacao; 
+	
+	public Receita(double valorTransacao) {
 		this.valorTransacao = valorTransacao;
 	}
 
