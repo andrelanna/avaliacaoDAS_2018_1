@@ -1,11 +1,11 @@
-package app;
+package src.app;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import exceptions.ContaJaCadastradaException;
-import exceptions.ValorEmBrancoException;
+import src.exceptions.ContaJaCadastradaException;
+import src.exceptions.ValorEmBrancoException;
 
 
 public class ContaCorrente {
