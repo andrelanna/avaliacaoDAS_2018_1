@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import exceptions.ContaJaCadastradaException;
-import exceptions.ValorEmBrancoException;
+import avaliacaoDAS_2018_1.exceptions.ContaJaCadastradaException;
+import avaliacaoDAS_2018_1.exceptions.ValorEmBrancoException;
 
 
 public class ContaCorrente {
