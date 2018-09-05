@@ -17,7 +17,7 @@ public class ContaCorrente {
 	private List<Receita> receitas = new LinkedList<Receita>();
 	private List<Despesa> despesas = new LinkedList<Despesa>();
 
-	private ContaCorrente(int agencia, int conta, double saldo) {
+	public ContaCorrente(int agencia, int conta, double saldo) {
 		this.agencia = agencia;
 		this.conta = conta;
 		this.saldo = saldo;
@@ -74,7 +74,7 @@ public class ContaCorrente {
 		return saldo;
 	}
 
-	public double criarReceita(float valorTransacao) throws ValorEmBrancoException {
+	public double criarReceita(double valorTransacao) throws ValorEmBrancoException {
 		if (valorTransacao == 0)
 			throw new ValorEmBrancoException();
 		
@@ -84,7 +84,7 @@ public class ContaCorrente {
 		return saldo;
 	}
 
-	public double criarDespesa(float valorTransacao) throws ValorEmBrancoException {
+	public double criarDespesa(double valorTransacao) throws ValorEmBrancoException {
 		if (valorTransacao == 0)
 			throw new ValorEmBrancoException();
 		
