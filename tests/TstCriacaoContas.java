@@ -8,7 +8,7 @@ import app.ContaCorrente;
 import app.ContaCorrente.*;
 import exceptions.ContaJaCadastradaException;
 
-class TstCriacaoContas {
+public class TstCriacaoContas {
 	
 	private int conta;
 	private int agencia;
@@ -21,7 +21,7 @@ class TstCriacaoContas {
 	}
 
 	@Test(expected = ContaJaCadastradaException.class)
-	void testCriacaoContas() {
+	public void testCriacaoContas() {
 		ContaCorrente contaCorrente = ContaCorrente.obterContaCorrente(this.conta, this.agencia, this.saldo);
 		ContaCorrente pesquisaConta = ContaCorrente.pesquisarContaCorrente(this.agencia, this.conta);
 		assertEquals(contaCorrente, pesquisaConta);
