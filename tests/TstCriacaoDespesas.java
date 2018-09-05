@@ -6,14 +6,17 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import app.ContaCorrente;
 import exceptions.ValorEmBrancoException;
+import tests.categories.Criacao;
 
 @RunWith(Parameterized.class)
+@Category(Criacao.class)
 public class TstCriacaoDespesas {
 
 	private int agencia;
@@ -43,11 +46,13 @@ public class TstCriacaoDespesas {
 
 	@Test
 	public void testCriacaoDespesas() throws ValorEmBrancoException {
-		ContaCorrente c = ContaCorrente.obterContaCorrente(agencia, conta, saldoAbertura);
+		ContaCorrente c = ContaCorrente.pesquisarContaCorrente(agencia, conta);
 		
-		double r = saldoAbertura - valorTransacao;
+		if(c == null) {
+			c = ContaCorrente.obterContaCorrente(agencia, conta, saldoAbertura);			
+		}
 		
-		assertEquals(r, c.criarDespesa(valorTransacao), 0);
+		assertEquals(saldo, c.criarDespesa(valorTransacao), 0);
 	}
 
 }

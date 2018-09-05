@@ -5,13 +5,16 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import app.ContaCorrente;
+import exceptions.ValorEmBrancoException;
 import tests.categories.Criacao;
 
 @RunWith(Parameterized.class)
@@ -21,12 +24,12 @@ public class TstCriacaoRendimentos {
 	private int agencia;
 	private int conta;
 	private double saldoAbertura;
-	private double valorTransacao;
+	private float valorTransacao;
 	private double saldo;
 	
 	
 	public TstCriacaoRendimentos(int agencia, 
-			int conta, double saldoAbertura, double valorTransacao, double saldo) {
+			int conta, double saldoAbertura, float valorTransacao, double saldo) {
 		this.agencia = agencia;
 		this.conta = conta;
 		this.saldoAbertura = saldoAbertura;
@@ -44,12 +47,15 @@ public class TstCriacaoRendimentos {
 	}
 	
 	@Test
-	public void testCriacaoRendimentos() {
-		ContaCorrente c = ContaCorrente.obterContaCorrente(agencia, conta, saldoAbertura);
+	public void testCriacaoRendimentos() throws ValorEmBrancoException {
+		ContaCorrente c = ContaCorrente.pesquisarContaCorrente(agencia, conta);
 		
-		double r = valorTransacao + saldoAbertura;
+		if(c == null) {
+			c = ContaCorrente.obterContaCorrente(agencia, conta, saldoAbertura);
+		}
 		
-		assertEquals(r, saldo, 0);
+		
+		assertEquals(saldo, c.criarReceita(valorTransacao) , 0);
 	}
 
 }

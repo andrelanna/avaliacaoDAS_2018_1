@@ -11,10 +11,18 @@ import tests.categories.Excecao;
 
 @Category(Excecao.class)
 public class TstCriacaoRendimentosValorEmBranco {
+	
+	private int agencia = 100;
+	private int conta = 100;
 
 	@Test(expected = ValorEmBrancoException.class)
 	public void testCriacaoRendimentoValorZero() throws ValorEmBrancoException {
-		ContaCorrente c = ContaCorrente.obterContaCorrente(100, 100, 0);
+		ContaCorrente c = ContaCorrente.pesquisarContaCorrente(agencia, conta);
+		
+		if(c == null) {
+			c = ContaCorrente.obterContaCorrente(100, 100, 0);			
+		}
+		
 		c.criarReceita(0);
 	}
 
